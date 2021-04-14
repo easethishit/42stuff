@@ -6,7 +6,7 @@
 /*   By: elmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/09 21:08:57 by elmartin          #+#    #+#             */
-/*   Updated: 2021/04/13 20:05:42 by elmartin         ###   ########.fr       */
+/*   Updated: 2021/04/14 20:02:15 by elmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-size_t	ft_strlen(const charr *s); // Mide el tamaño de un str.
+size_t	ft_strlen(const char *s); // Mide el tamaño de un str.
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 int	ft_atoi(const char *str);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
@@ -39,3 +39,5 @@ void	*ft_memchr(const void *s, int c, size_t n);
 int	ft_memcmp(const void *s1, const void *s2, size_t n);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
+#endif
