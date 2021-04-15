@@ -6,7 +6,7 @@
 /*   By: elmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/09 21:06:17 by elmartin          #+#    #+#             */
-/*   Updated: 2021/04/15 16:40:44 by elmartin         ###   ########.fr       */
+/*   Updated: 2021/04/15 21:14:08 by elmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 int	ft_atoi(const char *str)
 {
-	int		numero;
+	int		i;
 	int		negativo;
 
-	numero = 0;
+	i = 0;
 	negativo = 1;
 	while (*str == ' ' || *str == '\r' || *str == '\f' || *str == '\v' || *str == '\n' || *str == '\t')
 	{
@@ -31,8 +31,10 @@ int	ft_atoi(const char *str)
 	}
 	while (*str >= '0' && *str <= '9')
 	{
-		numero = numero * 10 + *str - '0';
+		i = i * 10 + *str - '0';
+		if (i > 2147483647 || i < -2147483648)
+			return (-1);
 		str++;
 	}
-	return (numero * negativo);
+	return (i * negativo);
 }
