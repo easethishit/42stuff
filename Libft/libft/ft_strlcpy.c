@@ -6,7 +6,7 @@
 /*   By: elmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/09 17:57:50 by elmartin          #+#    #+#             */
-/*   Updated: 2021/04/14 20:52:27 by elmartin         ###   ########.fr       */
+/*   Updated: 2021/04/15 20:42:43 by elmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	size_t	i;
 
 	i = 0;
+	if (!dst && !src)
+		return (0);
 	if (dstsize != '\0')
 	{
 		while (src[i] != '\0' && i < dstsize - 1)
