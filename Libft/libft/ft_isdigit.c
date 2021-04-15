@@ -6,13 +6,13 @@
 /*   By: elmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/09 17:58:27 by elmartin          #+#    #+#             */
-/*   Updated: 2021/04/09 21:07:24 by elmartin         ###   ########.fr       */
+/*   Updated: 2021/04/15 18:21:13 by elmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_idigit(int c)
+int	ft_isdigit(int c)
 {
 	if (c >= '0' && c <= '9')
 		return (1);

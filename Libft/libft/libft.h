@@ -6,7 +6,7 @@
 /*   By: elmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/09 21:08:57 by elmartin          #+#    #+#             */
-/*   Updated: 2021/04/14 20:02:15 by elmartin         ###   ########.fr       */
+/*   Updated: 2021/04/15 18:23:33 by elmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 
+int	main();
 size_t	ft_strlen(const char *s); // Mide el tamaño de un str.
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 int	ft_atoi(const char *str);
@@ -25,7 +26,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 int	ft_isprint(int c);
 int	ft_toupper(int c);
 void	ft_bzero(void *s, size_t n);
-int	ft_idigit(int c);
+int	ft_isdigit(int c);
 int	ft_isalnum(int c);
 int	ft_isalpha(int c);
 int	ft_isascii(int c);
@@ -40,4 +41,6 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
+void	*ft_memset(void *b, int c, size_t len);
+void	*ft_memccpy(void *dst, const void *src, int c, size_t n);
 #endif

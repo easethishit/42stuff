@@ -1,38 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/09 21:06:17 by elmartin          #+#    #+#             */
-/*   Updated: 2021/04/15 16:40:44 by elmartin         ###   ########.fr       */
+/*   Created: 2021/04/15 16:47:35 by elmartin          #+#    #+#             */
+/*   Updated: 2021/04/15 16:48:04 by elmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+int	main()
 {
-	int		numero;
-	int		negativo;
-
-	numero = 0;
-	negativo = 1;
-	while (*str == ' ' || *str == '\r' || *str == '\f' || *str == '\v' || *str == '\n' || *str == '\t')
-	{
-		str++;
-	}
-	while ((*str == '+') || (*str == '-'))
-	{
-		if (*str == '-')
-			negativo *= -1;
-		str++;
-	}
-	while (*str >= '0' && *str <= '9')
-	{
-		numero = numero * 10 + *str - '0';
-		str++;
-	}
-	return (numero * negativo);
+	return (0);
 }

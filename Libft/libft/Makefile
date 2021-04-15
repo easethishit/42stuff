@@ -6,7 +6,7 @@
 #    By: elmartin <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/14 19:07:42 by elmartin          #+#    #+#              #
-#    Updated: 2021/04/14 19:55:56 by elmartin         ###   ########.fr        #
+#    Updated: 2021/04/15 18:24:31 by elmartin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME	= libft.a
 
 SRCS	= ft_atoi.c	\
 	  ft_bzero.c	\
-	  ft_idigit.c	\
+	  ft_isdigit.c	\
 	  ft_isalnum.c	\
 	  ft_isalpha.c	\
 	  ft_isascii.c	\
@@ -37,14 +37,16 @@ SRCS	= ft_atoi.c	\
 
 OBJS	= ${SRCS:.c=.o}
 
-RM	= rm -rf
+RM	= rm -f
 	
 CC	= gcc
 
 CFLAGS	= -Wall -Wextra -Werror -I.
 
-${NAME}:
-	${CC} ${CFLAGS} ${SRCS}
+.c.o:
+	${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+
+${NAME}:	${OBJS} 
 	ar rc ${NAME} ${OBJS}
 
 all: ${NAME}

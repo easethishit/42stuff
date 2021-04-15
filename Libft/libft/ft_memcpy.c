@@ -6,7 +6,7 @@
 /*   By: elmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 18:28:09 by elmartin          #+#    #+#             */
-/*   Updated: 2021/04/12 20:37:04 by elmartin         ###   ########.fr       */
+/*   Updated: 2021/04/15 17:56:29 by elmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	char	*sd;
 	char	*ss;
 
+	if (!dst && !src)
+		return (NULL);
 	i = 0;
 	ss = (char *)src;
 	sd = (char *)dst;
