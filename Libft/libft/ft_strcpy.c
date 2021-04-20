@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/13 18:04:18 by elmartin          #+#    #+#             */
-/*   Updated: 2021/04/20 19:58:42 by elmartin         ###   ########.fr       */
+/*   Created: 2021/04/16 19:30:16 by elmartin          #+#    #+#             */
+/*   Updated: 2021/04/20 17:42:28 by elmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+void	*ft_strcpy(char *dest, const char *src)
 {
-	int	i;
-	const char *sc;
-	char cc;
+	int pos;
 
-	cc = c;
-	sc = s;
-	i = 0;
-	while (n--)
+	pos = 0;
+	while (src[pos] != '\0')
 	{
-		if (sc[i] == cc)	
-			return ((void *)sc + i);
-		i++;
+		dest[pos] = src[pos];
+		pos++;
 	}
-	return (0);
+	dest[pos] = '\0';
+	return (dest);
 }

@@ -1,31 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/13 18:04:18 by elmartin          #+#    #+#             */
-/*   Updated: 2021/04/20 19:58:42 by elmartin         ###   ########.fr       */
+/*   Created: 2021/04/20 17:18:53 by elmartin          #+#    #+#             */
+/*   Updated: 2021/04/20 19:06:41 by elmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-void	*ft_memchr(const void *s, int c, size_t n)
+char	*ft_itoa(int nb)
 {
-	int	i;
-	const char *sc;
-	char cc;
-
-	cc = c;
-	sc = s;
-	i = 0;
-	while (n--)
+	char	*str;
+	int	nl;
+	long	n;
+	
+	n = nb;
+	nl = ft_numlen(nb);
+	str = (char *)malloc(sizeof(char) * (nl + 1));
+	if (!str)
+		return (0);
+	str[nl] = '\0';
+	if (n == 0)
 	{
-		if (sc[i] == cc)	
-			return ((void *)sc + i);
-		i++;
+		str[0] = '0';
+		return (str);
 	}
-	return (0);
+	if (n < 0)	
+	{
+		str[0] = '-';
+		n *= -1;
+	}
+	while (n > 0)
+	{
+		nl--;
+		str[nl] = (n % 10) + '0';
+		n /= 10;
+	}
+	return (str);
 }

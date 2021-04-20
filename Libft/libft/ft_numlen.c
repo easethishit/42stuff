@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_numlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/13 18:04:18 by elmartin          #+#    #+#             */
-/*   Updated: 2021/04/20 19:58:42 by elmartin         ###   ########.fr       */
+/*   Created: 2021/04/20 17:18:57 by elmartin          #+#    #+#             */
+/*   Updated: 2021/04/20 18:52:36 by elmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+int	ft_numlen(long nb)
 {
-	int	i;
-	const char *sc;
-	char cc;
+	int	len;
 
-	cc = c;
-	sc = s;
-	i = 0;
-	while (n--)
+	if (nb == 0)
+		return (1);
+	len = 0;
+	if (nb < 0)
 	{
-		if (sc[i] == cc)	
-			return ((void *)sc + i);
-		i++;
+		nb *= -1;
+		len++;
 	}
-	return (0);
+	while (nb > 0)
+	{
+		nb /= 10;
+		len++;
+	}
+	return (len);
 }

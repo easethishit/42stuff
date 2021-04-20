@@ -1,31 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elmartin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/13 18:04:18 by elmartin          #+#    #+#             */
-/*   Updated: 2021/04/20 19:58:42 by elmartin         ###   ########.fr       */
+/*   Created: 2021/04/20 17:18:51 by elmartin          #+#    #+#             */
+/*   Updated: 2021/04/20 17:35:57 by elmartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+void	ft_putstr_fd(char *s, int fd)
 {
-	int	i;
-	const char *sc;
-	char cc;
-
-	cc = c;
-	sc = s;
-	i = 0;
-	while (n--)
+	if (fd < 0 || !s)
+		return ;
+	while (*s)
 	{
-		if (sc[i] == cc)	
-			return ((void *)sc + i);
-		i++;
+		ft_putchar_fd(*s, fd);
+		s++;
 	}
-	return (0);
 }
